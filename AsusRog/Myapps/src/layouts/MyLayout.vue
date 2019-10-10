@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          AHMAD ZAKY
+          AHMAD ZAKY My Project
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
@@ -23,7 +23,7 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
-      content-class="bg-grey-2"
+      content-class="bg-deep-orange-4 text-black"
     >
       <q-list>
         <q-item-label header>Essential Links</q-item-label>
