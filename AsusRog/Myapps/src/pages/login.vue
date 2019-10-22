@@ -47,7 +47,8 @@
     }
 </style>
 <script>
-import login_api from '../api/login/index';
+import login_api from '../api/login/index';     //import nama variabel
+import employee from '../api/employee/index';
 export default {
     data () {
         return {
@@ -56,6 +57,7 @@ export default {
         }
     },
     methods : {
+
         onSubmit(){
             let self = this;
             login_api
@@ -70,6 +72,7 @@ export default {
                 console.log(err);
             });
         }
+    
     }
 }
 </script>

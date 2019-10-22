@@ -1,84 +1,37 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="hHh lpR fFf">
+
+    <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
-          icon="menu"
-          aria-label="Menu"
-        />
-
         <q-toolbar-title>
-          AHMAD ZAKY My Project
+          <q-avatar>
+            <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
+          </q-avatar>
+          
+          APLIKASIKU
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
+        </q-toolbar>
     </q-header>
-
     <q-drawer
-      v-model="leftDrawerOpen"
+      :breakpoint="767"
+      :width="200"
       show-if-above
       bordered
-      content-class="bg-deep-orange-4 text-black"
+      content-class="bg-grey-2"
     >
       <q-list>
-        <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
+        <q-item-label header>Navigation</q-item-label>
+        <q-item v-for="nav in navs" 
+        :key="nav.id" 
+        :to="nav.to"
+        class="text-black"
+        exact 
+        clickable>
           <q-item-section avatar>
-            <q-icon name="school" />
+              <q-icon :name="nav.icon" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Docs</q-item-label>
-            <q-item-label caption>quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://github.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="code" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="chat" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Discord Chat Channel</q-item-label>
-            <q-item-label caption>chat.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="record_voice_over" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://twitter.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="rss_feed" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://facebook.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="public" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Facebook</q-item-label>
-            <q-item-label caption>@QuasarFramework</q-item-label>
+              <q-item-label>{{nav.label}}</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
@@ -90,14 +43,152 @@
   </q-layout>
 </template>
 
+<style>
+  @media screen and (min-width: 768px) {
+    .menu {
+      display: none;
+    }
+    
+  }
+  .q-drawer {
+      color: white !important;
+    }
+</style>
+
+
 <script>
 export default {
   name: 'MyLayout',
 
   data () {
     return {
-      leftDrawerOpen: false
+      leftDrawerOpen: false,
+      navs : [
+        {
+          label : 'Home',
+          icon : 'home',
+          to : '/home'
+        },
+        {
+          label : 'Login',
+          icon : 'folder',
+          to : '/login'
+        },
+        {
+          label : 'Owner',
+          icon : 'folder',
+          to : '/owner'
+        },
+        {
+          label : 'Projek',
+          icon : 'folder',
+          to : '/projek'
+        },
+        {
+          label : 'Employees',
+          icon : 'folder',
+          to : '/employee'
+        }
+      ]
     }
   }
 }
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template>
+  
+</template>
